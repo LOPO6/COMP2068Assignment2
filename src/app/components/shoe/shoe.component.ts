@@ -1,15 +1,16 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NgFor, NgIf } from '@angular/common';
 import { ShoeService } from '../../services/shoe.service';
 import { FormsModule } from '@angular/forms';
 
+
 @Component({
   selector: 'app-Shoe',
   imports: [NgFor, NgIf, FormsModule],
-  templateUrl: './shoe.component.html'
+  templateUrl: './.component.html'
 })
 
-export class ShoeComponent {
+export class ShoeComponent implements OnInit {
   SHOES: any;
   _id: string | undefined;
   name: string | undefined;
@@ -21,7 +22,13 @@ export class ShoeComponent {
   };
   constructor(private service: ShoeService) {}
 
+  getShoes(): void{
+    this.service.getShoes().subscribe(response=>{
+      this.SHOES = response;
+    })
+  }
   ngOnInit() {
-    //this.getShoes
+    this.getShoes();
+    
   }
 }
