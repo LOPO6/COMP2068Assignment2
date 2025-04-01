@@ -13,4 +13,8 @@ export class ShoeService {
   getShoes(){
     return this.http.get(`${this.serverUrl}/shoes`);
   }
+
+  addShoe(shoe: any){
+    return this.http.post(`${this.serverUrl}/shoes`,shoe)
+  }
 }
