@@ -25,4 +25,9 @@ export class ShoeService {
   updateShoe(shoe: any){
     return this.http.put(`${this.serverUrl}/shoes/${shoe._id}`, shoe);
   }
+  addStoreToShoe(shoe: any, store: any){
+    return this.http.put(`${this.serverUrl}/${shoe._id}/store`, store);
+  }
+
+
 }

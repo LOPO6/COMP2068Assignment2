@@ -1,24 +1,23 @@
-<h1>Add Something!</h1>
+<h1>Add a New Shoe!</h1>
+
 <section class="col-lg-6">
     <fieldset>
-        <label for="name">Name: </label>
-        <input required [(ngModel)]="name"/>
+        <label for="shoeName">Shoe Name: </label>
+        <input required [(ngModel)]="name" name="shoeName" />
     </fieldset>
     <fieldset>
-        <label for="price">Price: </label>
-        <input type = "number " min="0.01" required [(ngModel)] = "price"/>
+        <label for="shoePrice">Price: </label>
+        <input type="number" min="0.01" required [(ngModel)]="price" name="shoePrice" />
     </fieldset>
     <fieldset>
-        <label for="category">Category: </label>
+        <label for="shoeCategory">Category: </label>
+        <input [(ngModel)]="category" name="shoeCategory" />
     </fieldset>
     <fieldset>
-        <label for="manufacturer">Manufacturer: </label>
-        <input required/>
-        <select [(ngModel)] = "manufacturer" required>
-            <option *ngFor="let manufacturer of MANUFACTURERS" [value]="manufacturer._id">
-                {{manufacturer.name}}
-            </option>
-        </select>
+        <label for="shoeManufacturer">Manufacturer: </label>
+        <input required [(ngModel)]="manufacturer" name="shoeManufacturer" />
     </fieldset>
-    <button class="btn-btn-primary offset-2"(click)="addShoe()">Save</button>
+
+    <!-- Button to Add Shoe -->
+    <button class="btn btn-success" (click)="addShoe()">Save Shoe</button>
 </section>

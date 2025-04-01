@@ -1,57 +1,54 @@
 import { Component, OnInit } from '@angular/core';
-import { NgFor, NgIf } from '@angular/common';
 import { ShoeService } from '../../services/shoe.service';
 import { FormsModule } from '@angular/forms';
-
 
 export class Shoe {
   _id: string | undefined;
   name: string | undefined;
   price: number | undefined;
   category: string | undefined;
-  manufacturer?: {
-    name: string | undefined;
-    foundingYear: number | undefined;
-
-  }
+  manufacturer: string | undefined;
+  stores: {
+    name: string;
+    address: string;
+    stock: number;
+  }[] = [];
 }
 
 @Component({
   selector: 'app-add',
-  imports: [NgFor, NgIf, FormsModule],
+  imports: [FormsModule],
   templateUrl: './add.component.html',
-  styleUrl: './add.component.css'
+  styleUrls: ['./add.component.css']
 })
-export class AddComponent {
-  SHOES: any;
-  _id: string | undefined;
+export class AddComponent implements OnInit {
   name: string | undefined;
   price: number | undefined;
   category: string | undefined;
-  manufacturer?: {
-    name: string | undefined;
-    foundingYear: number | undefined;
-  };
-  constructor(private service: ShoeService){}
+  manufacturer: string | undefined;
 
-  addShoe(): void{
+  constructor(private service: ShoeService) {}
+
+  ngOnInit(): void {}
+
+  addShoe(): void {
     let newShoe = {
       name: this.name,
       price: this.price,
       category: this.category,
-      manufacturer: this.manufacturer
-
+      manufacturer: this.manufacturer,
+      stores: [] // No stores in this case as it's only for adding a shoe
     };
-    this.service.addShoe(newShoe).subscribe(response =>{
+
+    this.service.addShoe(newShoe).subscribe(response => {
       this.resetForm();
     });
   }
 
-  resetForm(): void{
+  resetForm(): void {
     this.name = undefined;
     this.price = undefined;
     this.category = undefined;
     this.manufacturer = undefined;
   }
-
 }
