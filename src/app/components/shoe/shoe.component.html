@@ -17,8 +17,14 @@
                 <h6>
                     ${{ shoe.manufacturer.name }}
                 </h6>
+                <div class="button-container">
+                    <button class="btn btn-warning" (click)="showModial(shoe)">Edit</button>
+                    <button class="btn btn-danger" (click)="showModial(shoe)">Delete</button>
+                </div>
             </li>
         </ul>
     </section>
 </section>
+
+
 

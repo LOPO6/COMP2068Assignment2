@@ -15,6 +15,14 @@ export class ShoeService {
   }
 
   addShoe(shoe: any){
-    return this.http.post(`${this.serverUrl}/shoes`,shoe)
+    return this.http.post(`${this.serverUrl}/shoes`,shoe);
+  }
+
+  deleteShoe(_id: string){
+    return this.http.delete(`${this.serverUrl}/shoes/${_id}`);
+  }
+
+  updateShoe(shoe: any){
+    return this.http.put(`${this.serverUrl}/shoes/${shoe._id}`, shoe);
   }
 }
