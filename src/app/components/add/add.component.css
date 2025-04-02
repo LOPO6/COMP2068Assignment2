@@ -1,0 +1,41 @@
+.btn-success{
+    background-color: lightblue;
+    border-color: lightblue;
+    font-family: Monaco, "Courier New", monospace;
+    font-weight: bold;
+    color: #212529;
+    text-transform: uppercase;
+    margin-top: 5px;
+}
+
+
+section {
+    text-align: center;     /* Center the text inside the section */
+    border-radius: 8px;     /* Optional rounded corners */
+    max-width: 500px;       /* Set a max width to control the layout */
+    width: 100%;            /* Allow the section to expand but with a max width */
+
+}
+
+body{
+    display: flex;
+    margin-top: 10px;
+    justify-content: center;
+
+}
+
+label{
+    font-family: Verdana, Geneva, Tahoma, sans-seriff;
+    color:#212529;
+}
+
+h1{
+    font-family: Monaco, "Courier New", monospace;
+    font-weight: bold;
+    color: #212529;
+    text-transform: uppercase;
+}
+
+input{
+    border-radius: 5px;
+}

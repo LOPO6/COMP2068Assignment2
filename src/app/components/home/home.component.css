@@ -1,0 +1,24 @@
+h1{
+    display: flex;
+    margin-top: 10px;
+    justify-content: center;
+    font-family: Monaco, "Courier New", monospace;
+    font-weight: bold;
+    color: #212529;
+  }
+h4{
+    display: flex;
+    justify-content: center;
+    font-family: Monaco, "Courier New", monospace;
+    font-weight: bold;
+    color: #212529;
+    margin-bottom: 15px;
+}
+
+p{
+    display: flex;
+    justify-content: center;
+    font-family: Verdana, Geneva, Tahoma, sans-seriff;
+    
+}
+

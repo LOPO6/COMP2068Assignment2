@@ -1,7 +1,5 @@
-<h1>Check out the shoes!</h1>
-
-<section class="row">
-    <section class="col-lg-6">
+<h1>CHECK OUT THE SHOES!</h1>
+<h3>Brand new shoes fresh from the database!</h3>
         <ul class="list-group">
             <!-- Loop through the list of shoes -->
             <li *ngFor="let shoe of SHOES" class="list-group-item">
@@ -35,8 +33,6 @@
                 </div>
             </li>
         </ul>
-    </section>
-</section>
 
 <!-- Modal for adding/editing a shoe -->
 <div class="modal" *ngIf="showModal" (click)="closeModal($event)">
